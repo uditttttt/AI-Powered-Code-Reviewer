@@ -1,1 +1,1 @@
-# Smart-AI-Interview-Preparation-App
+# AI-Powered-Code-Reviewer 
