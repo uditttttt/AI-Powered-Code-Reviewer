@@ -10,7 +10,9 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [code, setCode] = useState(`Paste Your Code Here....`);
+  const [code, setCode] = useState(` function sum() {
+  return 1 + 1
+}`);
 
   const [review, setReview] = useState(``);
 
@@ -19,10 +21,9 @@ function App() {
   }, []);
 
   async function reviewCode() {
-    const response = await axios.post("https://ai-powered-code-reviewer-backend-d665.onrender.com/ai/get-review", {
+    const response = await axios.post("http://localhost:3000/ai/get-review", {
       code,
     });
-    // console.log(response.data);
     setReview(response.data);
   }
 

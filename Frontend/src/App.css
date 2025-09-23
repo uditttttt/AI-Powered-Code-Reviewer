@@ -1,10 +1,12 @@
-*{
+* {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
 }
 
-html , body , #root{
+html,
+body,
+#root {
   height: 100%;
   width: 100%;
 }
@@ -29,7 +31,7 @@ main .left {
   position: relative;
 }
 
- .left .code,
+.left .code,
 .code pre,
 .code pre code {
   height: 100%;
@@ -58,4 +60,4 @@ main .right {
   padding: 1rem 2rem;
   font-size: 1.5rem;
   overflow: auto;
-} 
+}
