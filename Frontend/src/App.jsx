@@ -8,6 +8,10 @@ import "highlight.js/styles/github-dark.css";
 import axios from "axios";
 import "./App.css";
 
+// --- CHANGE 1: Get the base URL from the environment variable ---
+// This variable will be different for local development vs. production.
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
 function App() {
   const [count, setCount] = useState(0);
   const [code, setCode] = useState(` function sum() {
@@ -21,7 +25,9 @@ function App() {
   }, []);
 
   async function reviewCode() {
-    const response = await axios.post("http://localhost:3000/ai/get-review", {
+    // --- CHANGE 2: Use the environment variable to build the full URL ---
+    // The `${API_BASE_URL}/get-review` syntax combines the base URL with the specific endpoint.
+    const response = await axios.post(`${API_BASE_URL}/get-review`, {
       code,
     });
     setReview(response.data);
